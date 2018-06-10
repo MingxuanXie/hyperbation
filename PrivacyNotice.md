@@ -1,7 +1,7 @@
 # AA Zoo School Privacy Notice
  
 
-AA Zoo School is an augmented reality (AR) viewer customized based on Mozilla open source project WebXR Viewer that lets you run AR experiences on the web.  When you use the app, Mozilla collect certain information so that they can improve their product. 
+AA Zoo School is an augmented reality (AR) viewer customized based on Mozilla open source project WebXR Viewer that lets you run AR experiences on the web.  When you use the app, Mozilla collect certain information so that they can improve the WebXR project. 
 
 The developer of AA Zoo School does not collect user data.
 
