@@ -1,13 +1,15 @@
 # AA Zoo School Privacy Notice
  
 
-AA Zoo School is an augmented reality (AR) viewer customized based on Mozilla open source project WebXR Viewer that lets you run AR experiences on the web.  When you use the app, Mozilla collect certain information so that they can improve the WebXR project. 
+AA Zoo School is an augmented reality (AR) viewer customized from Mozilla open source project WebXR Viewer that lets you run AR experiences on the web.  When you use the app, Mozilla collect certain information so that they can improve the WebXR project. 
 
 The developer of AA Zoo School does not collect user data, but does receive App Analytics reports provided by Apple based on user data to improve the app. Please read [Apple's Policy](https://developer.apple.com/app-store/app-analytics/) about this. 
 
 - *Information Mozilla Collect Automatically When You Use*: The App starts sending Mozilla data once you install the application and start using it on your device. This includes:
    - _Interaction data_: The App sends data to Mozilla about your interactions with the application. This includes information such as when you launch the app, when you background or foreground the Viewer, and when you load a webpage that activates the AR capabilities of the Viewer. Mozilla don’t track any of the webpages you access through the Viewer.
    - _Technical data_: The app sends data to Mozilla about your app version, device operating system, and basic information about crashes and errors. When the app sends data to Mozilla, your IP address is temporarily collected as part of our server logs.
+
+Read the Mozilla's telemetry documentation for [iOS](https://github.com/mozilla-mobile/webxr-ios/blob/master/Telemetry.md).
 
 - *Turning-off Data Collection*: Data collection can be disabled by you at anytime, which will stop corresponding data collection by the app. This can be done by going to the Settings page in the app application, which directs you to the iOS Settings panel.  
 
