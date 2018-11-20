@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Body</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script src="./aframe-xr/aframe-gif-shader.min.js"></script>
+
+  </head>
+  <body>
+      <a-assets>
+          <img id="level3_18" src="./assets/level3_18.jpg"></img>
+          <img id="level3_19" src="./assets/level3_19.jpg"></img>
+          <img id="level3_20" src="./assets/level3_20.jpg"></img>
+          <img id="level3_21" src="./assets/level3_21.jpg"></img>
+      </a-assets>
+
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="hb1" src="./assets/gltf/hyperbody/00main/hb1/scene.gltf"></a-asset-item>
+        <a-asset-item id="hb2" src="./assets/gltf/hyperbody/00main/hb2/scene.gltf"></a-asset-item>
+        <a-asset-item id="hb3" src="./assets/gltf/hyperbody/00main/hb3/scene.gltf"></a-asset-item>
+        <a-asset-item id="hb4" src="./assets/gltf/hyperbody/00main/hb4/scene.gltf"></a-asset-item>
+        <a-asset-item id="hb5" src="./assets/gltf/hyperbody/00main/hb5/scene.gltf"></a-asset-item>
+        <a-asset-item id="hb6" src="./assets/gltf/hyperbody/00main/hb6/scene.gltf"></a-asset-item>
+        <img id="loading" src="./assets/loading.png">
+      </a-assets>
+
+      <!-- Loading Bar -->
+      <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+        <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading" transparent="true"></a-plane>
+        <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+        <a-animation attribute="rotation"
+        dur="1000"
+        fill="forwards"
+        to="0 360 0"
+        repeat="indefinite"></a-animation>
+      </a-entity>
+
+    <a-entity id="positioncontainer" position="0 -0.5 0"  scale="0.025 0.025 0.025" rotation="180 -30 0">
+      <!-- importing scene model in gltf format. -->
+      <a-entity gltf-model="#hb1" position="0 0 0" ></a-entity>
+      <a-entity gltf-model="#hb2" position="0 0 0" ></a-entity>
+      <a-entity gltf-model="#hb3" position="0 0 0" ></a-entity>
+      <a-entity gltf-model="#hb4" position="0 0 0" ></a-entity>
+      <a-entity gltf-model="#hb5" position="0 0 0" ></a-entity>
+      <a-entity gltf-model="#hb6" position="0 0 0" rotation="-180 0 0"></a-entity>
+
+
+      <!-- setting up lights. -->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+
+    </a-entity>
+
+      <!-- Archive -->
+      <a-entity id="description" text="color:#ff00ff;font:mozillavr;value:/Room 9, 91 Inverness Terrace, London, UK, 2018/;letterSpacing:0.37;alphaTest:2.2;tabSize:4.07;width:1.5;height:2.41;align:center" position="4.156 1.54 -0.097" rotation="0 90 0"></a-entity>
+
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_17.gif)" position="4.156 1.501 0.944" rotation="0 90 0" geometry="" scale="0.374 0.907 0.986"></a-plane>
+
+      <a-image src="#level3_18" width="0.1" height="0.1" position="4.156 1.964 -1.394" rotation="0.6875493541569879 97.28823361321378 -5.500394833255903" material="" geometry="height:0.056" scale="8.036273827506147 10 10"></a-image>
+      <a-image src="#level3_19" width="0.1" height="0.1" position="4.156 1.311 -1.518" rotation="0 90 0" material="" geometry="height:0.056" scale="7.527595676109933 9.36702750154234 9.36702750154234"></a-image>
+      <a-image src="#level3_20" width="0.1" height="0.1" position="4.156 1.766 -2.177" rotation="0 90.01166961505233 12.032113697747288" material="" geometry="height:0.056" scale="8.036 10 10"></a-image>
+      <a-image src="#level3_21" width="0.1" height="0.1" position="4.156 1.497 -2.614" rotation="0 90.01166961505233 -13.349916626548184" material="" geometry="height:0.056" scale="6.506 8.097 8.097"></a-image>
+    
+      
+    <!-- Background Color -->
+    <a-entity xr="ar: false; vr: true; magicWindow: ture">
+      <a-sky color="#00ff1c" radius="15" material="side:back;" position="0 3 0"></a-sky>
+    </a-entity>
+
+    </a-scene>
+  </body>
+</html>

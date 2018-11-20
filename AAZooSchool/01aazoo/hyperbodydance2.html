@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Dance 2</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script src="./aframe-xr/aframe-extras.min.js"></script>
+    <script src="./aframe-xr/aframe-gif-shader.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="Kai" src="./assets/gltf/hyperbody/02dance/Kai/scene.gltf"></a-asset-item>
+        <a-asset-item id="Mob" src="./assets/gltf/hyperbody/02dance/Mob/scene.gltf"></a-asset-item>
+        <a-asset-item id="murakumo" src="./assets/gltf/hyperbody/02dance/murakumo/scene.gltf"></a-asset-item>
+        <a-asset-item id="Naruto" src="./assets/gltf/hyperbody/02dance/Naruto/scene.gltf"></a-asset-item>
+        <a-asset-item id="NyuiAnna" src="./assets/gltf/hyperbody/02dance/NyuiAnna/scene.gltf"></a-asset-item>
+        <a-asset-item id="Ouka" src="./assets/gltf/hyperbody/02dance/Ouka/scene.gltf"></a-asset-item>
+        <a-asset-item id="PA" src="./assets/gltf/hyperbody/02dance/PA/scene.gltf"></a-asset-item>
+        <a-asset-item id="predator" src="./assets/gltf/hyperbody/02dance/predator/scene.gltf"></a-asset-item>
+        <a-asset-item id="prince" src="./assets/gltf/hyperbody/02dance/prince/scene.gltf"></a-asset-item>
+        <a-asset-item id="Robotmiku" src="./assets/gltf/hyperbody/02dance/Robotmiku/scene.gltf"></a-asset-item>
+
+      <!-- Loading Bar Asset -->
+      <img id="loading" src="./assets/loading.png">
+    </a-assets>
+    <!-- Loading Bar -->
+    <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+      <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading" transparent="true"></a-plane>
+      <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+      <a-animation attribute="rotation"
+      dur="1000"
+      fill="forwards"
+      to="0 360 0"
+      repeat="indefinite"></a-animation>
+    </a-entity>
+    <!-- Loading Bar End -->
+
+    <a-entity id="positioncontainer" position="0 0 0">
+      <!-- Charactor Animation -->
+      <a-entity gltf-model="#Kai" position="2.517 0 1.75" scale="0.01 0.01 0.01" rotation="0 89.782 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Mob" position="4.201 0 -0.291" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#predator" position="-0.372 0 -1.351" scale="0.006 0.006 0.006" rotation="0 52.196 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#murakumo" position="-1.941 0 -3.976" scale="0.01 0.01 0.01" rotation="0 52.196 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Naruto" position="1.045 0 -4.421" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 165.3556196747556 0"></a-entity>
+      <a-entity gltf-model="#NyuiAnna" position="-2.086 0 0.696" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Ouka" position="3.027 0 -2.313" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#PA" position="-1.837 0 3.461" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 116.482 0"></a-entity>
+      <a-entity gltf-model="#prince" position="-5.008 0 0.214" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 62.05132921266815 0"></a-entity>
+      <a-entity gltf-model="#Robotmiku" position="-3.338 0 -2.998" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+
+      <!-- setting up lights.-->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+
+      <!-- Archive -->
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_10.gif)" position="0.402 1.423 -1.45" geometry="" scale="0.32 0.742 0.245"></a-plane>
+
+    </a-entity>
+
+    <!-- Base Lines
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 60 0"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 120 0"></a-entity>
+    -->
+    
+    <!-- Background Color -->
+    <a-entity xr="ar: false; vr: true; magicWindow: ture">
+      <a-sky color="blue" radius="15" material="side:back;" position="0 3 0"></a-sky>
+    </a-entity>
+
+    </a-scene>
+  </body>
+</html>

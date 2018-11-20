@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Dance 3</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script src="./aframe-xr/aframe-extras.min.js"></script>
+    <script src="./aframe-xr/aframe-gif-shader.min.js"></script>
+
+  </head>
+  <body>
+      <a-assets>
+          <img id="level3_11" src="./assets/level3_11.jpg"></img>
+          <img id="level3_14" src="./assets/level3_14.jpg"></img>
+      </a-assets>
+
+    <a-scene>
+      <a-assets>
+
+        <a-asset-item id="blood_seeker" src="./assets/gltf/hyperbody/03dance/blood_seeker/scene.gltf"></a-asset-item>
+        <a-asset-item id="Buki" src="./assets/gltf/hyperbody/03dance/Buki/scene.gltf"></a-asset-item>
+        <a-asset-item id="csterrorist" src="./assets/gltf/hyperbody/03dance/csterrorist/scene.gltf"></a-asset-item>
+        <a-asset-item id="Cul" src="./assets/gltf/hyperbody/03dance/Cul/scene.gltf"></a-asset-item>
+        <a-asset-item id="Dva_r" src="./assets/gltf/hyperbody/03dance/Dva_r/scene.gltf"></a-asset-item>
+        <a-asset-item id="Eva" src="./assets/gltf/hyperbody/03dance/Eva/scene.gltf"></a-asset-item>
+        <a-asset-item id="fate" src="./assets/gltf/hyperbody/03dance/fate/scene.gltf"></a-asset-item>
+        <a-asset-item id="frieza" src="./assets/gltf/hyperbody/03dance/frieza/scene.gltf"></a-asset-item>
+        <a-asset-item id="Futurepolice" src="./assets/gltf/hyperbody/03dance/Futurepolice/scene.gltf"></a-asset-item>
+        <a-asset-item id="Granteed" src="./assets/gltf/hyperbody/03dance/Granteed/scene.gltf"></a-asset-item>
+        <a-asset-item id="Hijiri" src="./assets/gltf/hyperbody/03dance/Hijiri/scene.gltf"></a-asset-item>
+        <a-asset-item id="Huskar" src="./assets/gltf/hyperbody/03dance/Huskar/scene.gltf"></a-asset-item>
+        <a-asset-item id="Justice" src="./assets/gltf/hyperbody/03dance/Justice/scene.gltf"></a-asset-item>
+
+
+      <!-- Loading Bar Asset -->
+      <img id="loading" src="./assets/loading.png">
+    </a-assets>
+    <!-- Loading Bar -->
+    <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+      <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading" transparent="true"></a-plane>
+      <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+      <a-animation attribute="rotation"
+      dur="1000"
+      fill="forwards"
+      to="0 360 0"
+      repeat="indefinite"></a-animation>
+    </a-entity>
+    <!-- Loading Bar End -->
+
+    <a-entity id="positioncontainer" position="0 0 0">
+      <!-- Charactor Animation -->
+      <a-entity gltf-model="#blood_seeker" position="-0.404 0 4.396" scale="0.01 0.01 0.01" rotation="0 89.782 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Buki" position="0.436 0 -4.501" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#csterrorist" position="-0.51 0 -1.916" scale="0.00003 0.00003 0.00003" rotation="0 -33.86180569223165 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Cul" position="4.835 0 -0.025" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Granteed" position="2.731 0 2.501" scale="0.01 0.01 0.01" rotation="0 52.196 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Dva_r" position="0.554 0 1.612" scale="0.01 0.01 0.01" rotation="0 52.196 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Eva" position="3.403 0 -2.853" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 165.3556196747556 0"></a-entity>
+      <a-entity gltf-model="#fate" position="-5.914 0 0.825" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#frieza" position="-2.918 0 -4.804" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Futurepolice" position="-3.85 0 2.854" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 116.48231975009635 0"></a-entity>
+      <a-entity gltf-model="#Huskar" position="-2.139 -0.046 0.213" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Justice" position="-4.255 0 -3.461" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 63.999385716112954 0"></a-entity>
+
+      <!-- setting up lights. -->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+      
+      <!-- Archive -->
+      <a-image src="#level3_11" width="0.1" height="0.1" position="6.208 1.581 -2.488" rotation="0 -65.546 0" material="" geometry="height:0.056" scale="10.956 15.884 13.141"></a-image>
+      <a-image src="#level3_14" width="0.1" height="0.1" position="1.901 1.392 -5.496" rotation="0 -33.747 0" material="" geometry="height:0.056" scale="8.424 19.203 15.887"></a-image>
+
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_12.gif)" position="-4.622 1.359 -5.027" geometry="" scale="0.6835688078462279 1.0898241716824872 0.521066662311724" rotation="0 38.617 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_13.gif)" position="-6.018 1.423 -1.965" geometry="" scale="0.846 1.26 0.415" rotation="0 83.36535919153478 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_14.gif)" position="-2.123 1.556 5.694" geometry="" scale="0.57 1.26 0.415" rotation="0 146.90637867154308 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_15.gif)" position="-1.505 1.595 4.573" geometry="" scale="0.4214974538556499 1.26 0.415" rotation="0 131.78029288008932 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_16.gif)" position="-5.865 1.595 2.873" geometry="" scale="0.4214974538556499 1.26 0.415" rotation="0 131.78029288008932 0"></a-plane>
+    </a-entity>
+
+
+    <!-- Base Lines
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 60 0"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 120 0"></a-entity>
+    -->
+    
+      <!-- Background Color -->
+      <a-entity xr="ar: false; vr: true; magicWindow: ture">
+      <a-sky color="blue" radius="15" material="side:back;" position="0 3 0"></a-sky>
+      </a-entity>
+              
+    </a-scene>
+  </body>
+</html>

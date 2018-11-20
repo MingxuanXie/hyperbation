@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Elephant</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script src="./aframe-xr/aframe-extras.min.js"></script>
+    <script src="./aframe-xr/aframe-gif-shader.min.js"></script>
+  </head>
+  <body>
+    <a-assets>
+          <img id="level3_23" src="./assets/level3_23.jpg"></img>
+          <img id="level3_24" src="./assets/level3_24.jpg"></img>
+          <img id="level3_29" src="./assets/level3_29.jpg"></img>
+    </a-assets>
+
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="hyperball" src="./assets/gltf/hyperball/scene.gltf"></a-asset-item>
+       <!-- <a-asset-item id="scene" src="./assets/gltf/scene.gltf"></a-asset-item> -->
+        <img id="title-1987" src="./assets/title/1987.png">
+        <img id="title-1978" src="./assets/title/1978.png">
+        <img id="title-AACarnival" src="./assets/title/AACarnival.png">
+        <img id="title-AlvinBoyarsky" src="./assets/title/AlvinBoyarsky.png">
+        <img id="title-Elephant" src="./assets/title/Elephant.png">
+        <img id="title-150" src="./assets/title/150.png">
+        <img id="title-AA" src="./assets/title/AA.png">
+        <img id="title-1992" src="./assets/title/1992.png">
+        <img id="title-FashionShow" src="./assets/title/FashionShow.png">
+        <img id="title-Foundation" src="./assets/title/Foundation.png">
+
+        <img id="title-1922" src="./assets/title/1922.png">
+        <img id="title-1983" src="./assets/title/1983.png">
+        <img id="title-1986" src="./assets/title/1986.png">
+        <img id="title-1997" src="./assets/title/1997.png">
+        <img id="title-AACinema" src="./assets/title/AACinema.png">
+        <img id="title-BedfordSquare" src="./assets/title/BedfordSquare.png">
+        <img id="title-Buffet" src="./assets/title/Buffet.png">
+        <img id="title-ChristmasParty" src="./assets/title/ChristmasParty.png">
+        <img id="title-DecoratedBar" src="./assets/title/DecoratedBar.png">
+        <img id="title-Dip10" src="./assets/title/Dip10.png">
+        <img id="title-Dip11" src="./assets/title/Dip11.png">
+        <img id="title-Elephant" src="./assets/title/Elephant.png">
+        <img id="title-FashionShow" src="./assets/title/FashionShow.png">
+        <img id="title-Fireworks" src="./assets/title/Fireworks.png">
+        <img id="title-FoilDress" src="./assets/title/FoilDress.png">
+        <img id="title-Foundation" src="./assets/title/Foundation.png">
+        <img id="title-HookePark" src="./assets/title/HookePark.png">
+        <img id="title-Inter11" src="./assets/title/Inter11.png">
+        <img id="title-Inter12" src="./assets/title/Inter12.png">
+        <img id="title-Library" src="./assets/title/Library.png">
+        <img id="title-London" src="./assets/title/London.png">
+        <img id="title-Maeda" src="./assets/title/Maeda.png">
+        <img id="title-Nato" src="./assets/title/Nato.png">
+        <img id="title-PlanetaryArchitecture" src="./assets/title/PlanetaryArchitecture.png">
+        <img id="title-StrawberryTable" src="./assets/title/StrawberryTable.png">
+        <img id="title-Workshop" src="./assets/title/Workshop.png">
+        <img id="title-ZahaHadid" src="./assets/title/ZahaHadid.png">
+
+      <!-- Loading Bar Asset -->
+      <img id="loading" src="./assets/loading.png">
+    </a-assets>
+    <!-- Loading Bar -->
+    <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+      <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading" transparent="true"></a-plane>
+      <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+      <a-animation attribute="rotation"
+      dur="1000"
+      fill="forwards"
+      to="0 360 0"
+      repeat="indefinite"></a-animation>
+    </a-entity>
+    <!-- Loading Bar End -->
+
+  <a-entity id="gallery" visible="ture" >
+    <a-entity id="positioncontener" position="-1.631 -1 -10" rotation="0 -44.576 0">
+      <!-- importing scene model in gltf format. -->
+      <a-entity gltf-model="#scene" position="12.028 0 18.109"></a-entity>
+      <a-entity gltf-model="#hyperball" position="11.116 8.44 6.349" scale="0.008 0.008 0.008"></a-entity>
+
+
+
+      <!-- setting up lights. -->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+
+      <!-- Charactors -->
+      <a-entity gltf-model="./assets/gltf/aa_archive/scene.gltf" position="11.339 0 17.501"></a-entity>
+      <!-- Archvie -->
+      <a-entity gltf-model="./assets/gltf/new_elephant/scene.gltf" position="6.995 0 4.772" rotation="0 47.04 0" scale="0.05 0.05 0.05"></a-entity>
+      <!-- Archive Titles -->
+      <a-image src="#title-1978" scale="0.545 0.273 0.44" transparent="true" position="11.424 2.23 3.954" rotation="0 75.344 0" material="" geometry=""></a-image><a-image src="#title-1978" scale="0.545 0.273 0.44" transparent="true" position="2.726 1.638 8.624" rotation="0 75.34395005970325 0" material="" geometry=""></a-image>
+      <a-image src="#title-1987" scale="0.787 0.131 0.263" transparent="true" position="16.932 0.933 -5.458" rotation="0 -111.211 0" material="" geometry=""></a-image><a-image src="#title-1987" scale="0.787 0.131 0.263" transparent="true" position="16.643 0.933 -4.449" rotation="0.057 45.665000000000006 -0.344" material="" geometry=""></a-image><a-image src="#title-1987" scale="0.787 0.131 0.263" transparent="true" position="11.863 0.786 -2.937" rotation="0 28.591 0" material="" geometry=""></a-image><a-image src="#title-1987" scale="1.177 0.196 0.393" transparent="true" position="12.525 2.818 -3.513" rotation="0 28.591 0" material="" geometry=""></a-image><a-image src="#title-1987" scale="0.659 0.11 0.22" transparent="true" position="11.923 1.315 -4.685" rotation="0 28.591 0" material="" geometry=""></a-image><a-image src="#title-1987" scale="0.787 0.131 0.263" transparent="true" position="10.496 1.087 -10.736" rotation="0 28.591 0" material="" geometry=""></a-image>
+      <a-image src="#title-AACarnival" scale="1.622 0.27 0.541" transparent="true" position="6.748 1.458 6.039" rotation="24.236114734033823 104.85127650894066 -6.703606203030632" material="" geometry=""></a-image><a-image src="#title-AACarnival" scale="1.596 0.266 0.532" transparent="true" position="9.155 1.8804905944143457 1.492" rotation="24.236114734033823 106.05448787871538 -6.703606203030632" material="" geometry=""></a-image><a-image src="#title-AACarnival" scale="1.794 0.299 0.598" transparent="true" position="12.905 3.22 -2.731" rotation="9.11002894258009 -69.84355522644735 0.8594366926962348" material="" geometry=""></a-image><a-image src="#title-AACarnival" scale="1.132 0.188 0.378" transparent="true" position="11.743 0.2 -4.573" rotation="9.11002894258009 63.77020259806063 0.8594366926962348" material="" geometry=""></a-image><a-image src="#title-AACarnival" scale="1.107 0.185 0.369" transparent="true" position="9.321 1.307 -10.383" rotation="24.23611473403383 -2.1691284613192123 -6.703606203030634" material="" geometry=""></a-image>
+      <a-image src="#title-AlvinBoyarsky" scale="1.2 0.179 0.4" transparent="true" position="11.696 1.021 3.773" rotation="0 51.107835325669434 0" material="" geometry=""></a-image>
+      <a-image src="#title-AlvinBoyarsky" scale="2.169 0.362 0.723" transparent="true" position="1.76 1.765 10.126" rotation="0 -88.35009200917294 0" material="" geometry=""></a-image><a-image src="#title-AlvinBoyarsky" scale="2.169 0.362 0.723" transparent="true" position="2.609 1.765 10.212" rotation="0 65.48907598345309 0" material="" geometry=""></a-image>
+      <a-image src="#title-Elephant" scale="1.245 0.162 0.724" transparent="true" position="12.129 0.831 3.053" rotation="-0.11459155902616465 77.34930234266115 -0.6875493541569879" material="" geometry=""></a-image><a-image src="#title-Elephant" scale="1.787 0.298 0.596" transparent="true" position="2.603 1.453 9.758" rotation="-0.11459155902616465 77.34930234266115 -0.6875493541569879" material="" geometry=""></a-image>
+      <a-image src="#title-150" scale="1.859 0.31 0.58" transparent="true" position="14.302 3.02 -6.394" rotation="0 -34.836 -2.406" material="" geometry=""></a-image><a-image src="#title-150" scale="0.928 0.155 0.289" transparent="true" position="10.846 1.152 -0.881" rotation="0 -1.031 -2.406" material="" geometry=""></a-image><a-image src="#title-150" scale="1.859 0.31 0.58" transparent="true" position="9.51 3.02 0.046" rotation="0 50.935947987130184 -2.4064227395494577" material="" geometry=""></a-image>
+      <a-image src="#title-AA" scale="0.912 0.57 0.114" transparent="true" position="1.659 4.276 6.692" rotation="0 -83.13617607348246 0" material="" geometry=""></a-image>
+      <a-image src="#title-AA" scale="0.92 0.575 0.115" transparent="true" position="12.533 3.784 0.711" rotation="0 -149.7138718676841 0" material="" geometry=""></a-image><a-image src="#title-AA" scale="0.92 0.575 0.115" transparent="true" position="15.011 4.096 -6.428" rotation="0 178.9347194193561 0" material="" geometry=""></a-image><a-image src="#title-AA" scale="0.725 0.454 0.091" transparent="true" position="10.317 2.766 -1.337" rotation="0 -130.46248995128846 0" material="" geometry=""></a-image>
+      <a-image src="#title-AA" scale="1.465 0.915 0.183" transparent="true" position="2.737 3.052 10.533" rotation="0 -52.827 0" material="" geometry=""></a-image>
+      <a-image src="#title-1992" scale="1.192 0.199 0.397" transparent="true" position="13.493 2.902 0.638" rotation="2.807 7.334 7.105000000000001" material="" geometry=""></a-image><a-image src="#title-1992" scale="1.515 0.253 0.505" transparent="true" position="2.467 3.009 5.798" rotation="2.807 7.334 7.105000000000001" material="" geometry=""></a-image><a-image src="#title-1992" scale="0.795 0.132 0.265" transparent="true" position="15.857 1.278 -6.09" rotation="2.807 7.334 7.105000000000001" material="" geometry=""></a-image>
+      <a-image src="#title-FashionShow" scale="3 0.5 1" transparent="true" position="-440.654 1.254 9.156" rotation="0 97.34552939272687 0" material="" geometry=""></a-image>
+      <a-image src="#title-Foundation" scale="1.412 0.235 0.471" transparent="true" position="1.665 3.712 6.603" rotation="0 58.671 0" material="" geometry=""></a-image>
+      
+      <a-image src="#title-1983" scale="1 0.154 1" transparent="true" material="" geometry="" position="10.768 0.954 0.375" rotation="0 21.543 0"></a-image><a-image src="#title-1983" scale="1 0.154 1" transparent="true" material="" geometry="" position="15.044 1.346 -5.644" rotation="0 -35.237 0"></a-image><a-image src="#title-1983" scale="1 0.154 1" transparent="true" material="" geometry="" position="15.115 1.869 -0.348" rotation="0 -32.2 0"></a-image>
+      <a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="14.565 1.455 -0.866" rotation="3.724225668350351 -27.330086827740267 -2.8647889756541165"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="15.367 1.682 0.977" rotation="4.641 16.157 0.4580000000000001"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="18.364 0.409 -7.826" rotation="4.297183463481174 33.91910147174473 1.8334649444186344"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="10.845 1.633 -5.765" rotation="31.111608275603704 40.79459501331461 -1.260507149287811"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="15.082 2.454 -2.994" rotation="4.640958140559668 -71.04676659622208 0.4583662361046586"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="13.915 2.473 -1.652" rotation="4.5263665815335035 -62.10862499218124 1.1459155902616465"></a-image>
+      <a-image src="#title-1997" scale="1 0.212 1" transparent="true" material="" geometry="" position="8.064 3.022 -4.778" rotation="4.641 16.157 0.4580000000000001"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="10.845 1.633 -5.765" rotation="31.111608275603704 40.79459501331461 -1.260507149287811"></a-image><a-image src="#title-1986" scale="1 0.212 1" transparent="true" material="" geometry="" position="15.082 2.454 -2.994" rotation="4.640958140559668 -71.04676659622208 0.4583662361046586"></a-image>
+      <a-image src="#title-AACinema" scale="1 0.2112793938109698 1" transparent="true" material="" geometry="" position="13.112 2.075 -9.703"></a-image><a-image src="#title-AACinema" scale="1 0.211 1" transparent="true" material="" geometry="" position="15.789 1.6 2.171"></a-image>
+      <a-image src="#title-BedfordSquare" scale="1 0.166 1" transparent="true" material="" geometry="" position="11.03 1.326 4.189" rotation="0 34.263 0"></a-image>
+      <a-image src="#title-Buffet" scale="1 0.365 1" transparent="true" material="" geometry="" position="15.186 1.171 -3.25" rotation="0 -109.66046964891899 0"></a-image>
+      <a-image src="#title-ChristmasParty" scale="1 0.19 1" transparent="true" material="" geometry="" position="16.83 0.727 -5.386" rotation="0 -90.069 0"></a-image><a-image src="#title-ChristmasParty" scale="1 0.19 1" transparent="true" material="" geometry="" position="17.228 0.727 -4.708" rotation="0 17.24602963343778 0"></a-image><a-image src="#title-ChristmasParty" scale="1 0.19 1" transparent="true" material="" geometry="" position="11.876 0.993 -2.67" rotation="0 44.23234178409955 0"></a-image>
+      <a-image src="#title-DecoratedBar" scale="1 0.253 1" transparent="true" material="" geometry="" position="14.523 0.574 -0.65" rotation="0 -25.954988119426293 0"></a-image>
+      <a-image src="#title-Dip10" scale="1.04 0.236 1.04" transparent="true" material="" geometry="" position="15.568 1.197 1.69" rotation="0 -68.92682275423803 0"></a-image><a-image src="#title-Dip10" scale="1.04 0.236 1.04" transparent="true" material="" geometry="" position="17.669 0.567 -7.809" rotation="0 -29.564999999999998 0"></a-image><a-image src="#title-Dip10" scale="1.04 0.236 1.04" transparent="true" material="" geometry="" position="12.179 4.453 2.238" rotation="0 55.10185276499691 0"></a-image>
+      <a-image src="#title-Dip11" scale="0.827 0.228 0.827" transparent="true" material="" geometry="" position="12.391 1.923 -6.07" rotation="0 37.127665124477346 0"></a-image>
+      
+      <a-image src="#title-FashionShow" scale="1.213 0.18 1.213" transparent="true" material="" geometry="" position="1.669 3.324 6.496" rotation="0 65.489 0"></a-image><a-image src="#title-FashionShow" scale="1.213 0.18 1.213" transparent="true" material="" geometry="" position="12.845 3.114 0.784" rotation="33.74721413320549 18.391945223699427 -2.2345354010102105"></a-image><a-image src="#title-FashionShow" scale="1.363 0.202 1.363" transparent="true" material="" geometry="" position="8.187 1.375 4.475" rotation="2.291831180523293 0.11459155902616465 -5.672282171795151"></a-image><a-image src="#title-FashionShow" scale="1.076 0.16 1.076" transparent="true" material="" geometry="" position="15.481 1.353 -5.962" rotation="0 65.489 0"></a-image><a-image src="#title-FashionShow" scale="1.076 0.16 1.076" transparent="true" material="" geometry="" position="11.536 1.172 -1.666" rotation="0 65.489 0"></a-image>
+      <a-image src="#title-Fireworks" scale="1 0.241 1" transparent="true" material="" geometry="" position="8.841 3.412 -5.499" rotation="3.552 65.489 -3.495"></a-image>
+      <a-image src="#title-FoilDress" scale="0.489 0.134 0.489" transparent="true" position="11.756 1.026 -4.461" rotation="0 63.82749837757371 0" material="" geometry=""></a-image>
+      <a-image src="#title-Foundation" scale="1 0.155 1" transparent="true" material="" geometry="" position="11.186 0.671 -0.902" rotation="0 28.476002418001915 0"></a-image>
+      <a-image src="#title-HookePark" scale="1.08 0.242 1.08" transparent="true" material="" geometry="" position="7.631 2.239 1.215" rotation="0 35.17960862103254 0"></a-image><a-image src="#title-HookePark" scale="0.698 0.157 0.698" transparent="true" material="" geometry="" position="12 2.595 -5.72" rotation="0 35.17960862103254 0"></a-image><a-image src="#title-HookePark" scale="0.867 0.195 0.867" transparent="true" material="" geometry="" position="17.791 2.573 1.622" rotation="0 -2.291831180523293 0"></a-image><a-image src="#title-HookePark" scale="1.194 0.268 1.194" transparent="true" material="" geometry="" position="16.999 2.807 -6.299" rotation="0 -2.291831180523293 0"></a-image>
+      <a-image src="#title-Inter11" scale="1 0.236 1" transparent="true" material="" geometry="" position="11.609 1.772 -10.01"></a-image>
+      <a-image src="#title-Inter12" scale="1.332 0.345 1.332" transparent="true" material="" geometry="" position="8.412 5.408 -1.312" rotation="39.24760896646139 79.75572508221059 0"></a-image>
+      <a-image src="#title-Library" scale="0.836 0.268 0.836" transparent="true" material="" geometry="" position="10.74 1.354 -5.618"></a-image>
+      <a-image src="#title-London" scale="1 0.31 1" transparent="true" material="" geometry="" position="8.128 2.476 5.85" rotation="0 42.51346839870708 0"></a-image>
+      <a-image src="#title-Maeda" scale="1 0.2 1" transparent="true" material="" geometry="" position="17.372 3.06 1.73"></a-image>
+      <a-image src="#title-Nato" scale="1 0.415 1" transparent="true" material="" geometry="" position="15.598 2.812 1.378"></a-image><a-image src="#title-Nato" scale="1 0.415 1" transparent="true" material="" geometry="" position="18.314 2.812 -7.943"></a-image><a-image src="#title-Nato" scale="0.713 0.296 0.713" transparent="true" material="" geometry="" position="12.538 3.544 2.038" rotation="0 52.48293403398341 0"></a-image>
+      
+      <a-image src="#title-PlanetaryArchitecture" scale="1 0.161 1" transparent="true" material="" geometry="" position="10.754 0.973 1.361" rotation="0 63.139949023416726 0"></a-image><a-image src="#title-PlanetaryArchitecture" scale="1.151 0.161 1" transparent="true" material="" geometry="" position="15.216 1.19 -5.023" rotation="0 -72.47916108404914 0"></a-image><a-image src="#title-PlanetaryArchitecture" scale="1.121 0.161 1" transparent="true" material="" geometry="" position="15.008 1.949 -0.17" rotation="49.962 -50.936 0"></a-image>
+      <a-image src="#title-StrawberryTable" scale="1.471 0.3 1.471" transparent="true" material="" geometry="" position="8.592 7.193 0.186" rotation="0 66.119329558097 0"></a-image>
+      <a-image src="#title-Workshop" scale="0.861 0.252 0.861" transparent="true" material="" geometry="" position="17.024 2.581 -6.417"></a-image>
+      <a-image src="#title-ZahaHadid" scale="0.796 0.154 0.796" transparent="true" material="" geometry="" position="10.742 1.37 1.225" rotation="0 75.459 0"></a-image><a-image src="#title-ZahaHadid" scale="0.796 0.154 0.796" transparent="true" material="" geometry="" position="15.374 1.503 -5.18" rotation="0 -66.23392111712316 0"></a-image>
+
+      <!-- New Archive -->
+      <a-image src="#level3_23" width="0.1" height="0.1" position="15.127 2.784 -8.959" rotation="0 12.949 0" material="" geometry="height:0.056" scale="10.969 25 1.465"></a-image>
+      <a-image src="#level3_24" width="0.1" height="0.1" position="16.862 2.634 -8.62" rotation="0 -73.39589355625846 0" material="" geometry="height:0.056" scale="10.969 25 1.465"></a-image>
+      <a-image src="#level3_29" width="0.1" height="0.1" position="3.904 2.634 12.588" rotation="0 -22.517241348641353 0" material="" geometry="height:0.056" scale="35 35 1.465"></a-image>
+
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_22.gif)" position="14.783 2.896 -10.33" geometry="" scale="0.644 1.26 0.415" rotation="0 16.673071838306956 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_25.gif)" position="16.182 2.896 -11.783" geometry="" scale="0.593 1.26 0.415" rotation="0 -11.172677005051053 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_26.gif)" position="17.478 2.896 -10.175" geometry="" scale="0.503 1.26 0.415" rotation="0 -50.477581751025525 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_27.gif)" position="14.781 2.896 -11.883" geometry="" scale="0.724 1.26 0.415" rotation="0 28.705185536054245 0"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_28.gif)" position="16.177 2.896 -10.132" geometry="" scale="0.543 1.26 0.415" rotation="0 -11.172677005051053 0"></a-plane>
+
+
+
+     </a-entity>
+  </a-entity>
+  
+     <!-- Background Color -->
+     <a-entity xr="ar: false; vr: true; magicWindow: ture">
+      <a-sky color="black" radius="15" material="side:back;" position="0 3 0"></a-sky>
+    </a-entity>
+
+</a-scene>
+    
+  </body>
+</html>

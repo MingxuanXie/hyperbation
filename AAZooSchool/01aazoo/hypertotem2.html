@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Totem</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script>
+
+      AFRAME.registerComponent('gps-position', {
+        
+        watchId: null,
+        zeroCrd: null,
+        crd: null,
+        
+        schema: {
+          accuracy: {
+            type: 'int',
+            default: 100
+          },
+          'zero-crd-latitude': {
+            type: 'number',
+            default: NaN
+          },
+          'zero-crd-longitude': {
+            type: 'number',
+            default: NaN
+          }
+        },
+        
+        init: function () {
+          
+          if(!isNaN(this.data['zero-crd-latitude']) && !isNaN(this.data['zero-crd-longitude'])){
+            this.zeroCrd = {latitude: this.data['zero-crd-latitude'], longitude: this.data['zero-crd-longitude']};
+          }
+          
+          this.watchId = this.watchGPS(function(position){
+            this.crd = position.coords;
+            this.updatePosition();
+          }.bind(this));
+          
+        },
+        
+        watchGPS: function (success, error) {
+          
+          if(typeof(error) == 'undefined')
+            error = function(err) { console.warn('ERROR('+err.code+'): '+err.message); };
+          
+          if (!("geolocation" in navigator)){
+            error({code: 0, message: 'Geolocation is not supported by your browser'});
+            return;
+          }
+          
+          return navigator.geolocation.watchPosition(success, error, {enableHighAccuracy: true, maximumAge: 0, timeout: 27000});
+        },
+        
+        updatePosition: function () {
+          
+          if(this.crd.accuracy > this.data.accuracy) return;
+          
+          if(!this.zeroCrd) this.zeroCrd = this.crd;
+          
+          var p = this.el.getAttribute('position');
+          
+          p.x = this.calcMeters(
+            this.zeroCrd,
+            {
+              longitude: this.crd.longitude,
+              latitude: this.zeroCrd.latitude
+            }
+          ) * (
+            this.crd.longitude > this.zeroCrd.longitude
+              ? 1 : -1
+          );
+          p.z = this.calcMeters(
+            this.zeroCrd,
+            {
+              longitude: this.zeroCrd.longitude,
+              latitude: this.crd.latitude
+            }
+          ) * (
+            this.crd.latitude > this.zeroCrd.latitude
+              ? -1 : 1
+          );
+          
+          this.el.setAttribute('position', p);
+          
+        },
+        
+        calcMeters: function(src, dest) {
+          var dlon = THREE.Math.degToRad(dest.longitude - src.longitude);
+          var dlat = THREE.Math.degToRad(dest.latitude - src.latitude);
+          
+          var a = (Math.sin(dlat / 2) * Math.sin(dlat / 2)) + Math.cos(THREE.Math.degToRad(src.latitude)) * Math.cos(THREE.Math.degToRad(dest.latitude)) * (Math.sin(dlon / 2) * Math.sin(dlon / 2));
+          var angle = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+          
+          return angle * 6365082;
+        },
+        
+        remove: function() {
+          if(this.watchId) navigator.geolocation.clearWatch(this.watchId);
+          this.watchId = null;
+        }
+        
+      });
+      
+      
+      AFRAME.registerComponent('gps-site', {
+        
+        cameraGpsPosition: null,
+        deferredInitInterval: 0,
+        
+        schema: {
+          latitude: {
+            type: 'number',
+            default: 0
+          },
+          longitude: {
+            type: 'number',
+            default: 0
+          },
+          cameraSelector: {
+            type: 'string',
+            default: 'a-camera, [camera]'
+          }
+        },
+        
+        init: function () {
+          if(this.deferredInit()) return;
+          this.deferredInitInterval = setInterval(this.deferredInit.bind(this), 1000);
+        },
+        
+        deferredInit: function () {
+          
+          if(!this.cameraGpsPosition){
+            var camera = document.querySelector(this.data.cameraSelector);
+            if(typeof(camera.components['gps-position']) == 'undefined') return;
+            this.cameraGpsPosition = camera.components['gps-position'];
+          }
+          
+          if(!this.cameraGpsPosition.zeroCrd) return;
+          
+          this.updatePosition();
+          
+          clearInterval(this.deferredInitInterval);
+          this.deferredInitInterval = 0;
+          
+          return true;
+        },
+        
+        updatePosition: function() {
+          
+          var p = {x: 0, y: 0, z: 0};
+          
+          p.x = this.cameraGpsPosition.calcMeters(
+            this.cameraGpsPosition.zeroCrd,
+            {
+              longitude: this.data.longitude,
+              latitude: this.cameraGpsPosition.zeroCrd.latitude
+            }
+          ) * (
+            this.data.longitude > this.cameraGpsPosition.zeroCrd.longitude
+              ? 1 : -1
+          );
+          p.z = this.cameraGpsPosition.calcMeters(
+            this.cameraGpsPosition.zeroCrd,
+            {
+              longitude: this.cameraGpsPosition.zeroCrd.longitude,
+              latitude: this.data.latitude
+            }
+          ) * (
+            this.data.latitude > this.cameraGpsPosition.zeroCrd.latitude
+              ? -1 : 1
+          );
+          
+          this.el.setAttribute('position', p);
+          
+        }
+        
+      });
+      
+      
+      </script>
+
+
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="totemsky" src="./assets/png/totemball2.png">
+
+        <a-asset-item id="illidan" src="./assets/gltf/hypertotem/illidan/scene.gltf"></a-asset-item>
+        <a-asset-item id="totem1" src="./assets/gltf/hypertotem/totem1/scene.gltf"></a-asset-item>
+        <a-asset-item id="totem2" src="./assets/gltf/hypertotem/totem2/scene.gltf"></a-asset-item>
+
+      <!-- Loading Bar Asset -->
+      <img id="loading" src="./assets/loading.jpg">
+    </a-assets>
+    <!-- Loading Bar -->
+    <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+      <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading"></a-plane>
+      <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+      <a-animation attribute="rotation"
+      dur="1000"
+      fill="forwards"
+      to="0 360 0"
+      repeat="indefinite"></a-animation>
+    </a-entity>
+    <!-- Loading Bar End -->
+    <!-- Geolocated Camera -->
+    <a-entity camera id="camera" wasd-controls look-controls gps-position></a-entity>
+
+    <a-entity id="positioncontainer" gps-site="longitude: -0.889223; latitude: 51.556369;">
+      <a-entity gltf-model="#illidan"></a-entity>
+      <a-entity gltf-model="#totem1" position="-0.774 -22.504 -27.01" rotation="0 -17.188733853924695 0" scale="21.827 21.827 21.827"></a-entity>
+      <a-entity gltf-model="#totem2" position="-1.386 -15.118 12.851" rotation="0 147.1355617895954 0" scale="14.616 14.616 14.616"></a-entity>
+
+      <!-- setting up lights. -->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+      <a-sky src="#totemsky" radius="10" position="-0.385 4.808 -1.519" rotation="180 0 0" material="side:back;transparent:true"></a-sky>
+    </a-entity>    
+    
+
+    </a-scene>
+  </body>
+</html>

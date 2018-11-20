@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperbation: AA Zoo School: Hyper Dance 1</title>
+    <meta name="description" content="Hyperbation">
+    <script src="./aframe-xr/aframe-master.js"></script>
+    <script src="./aframe-xr/three.xr.js"></script>
+    <script src="./aframe-xr/aframe-xr.js"></script>
+    <script src="./aframe-xr/aframe-extras.min.js"></script>
+    <script src="./aframe-xr/aframe-gif-shader.min.js"></script>
+
+  </head>
+  <body>
+      <a-assets>
+          <img id="level3_1" src="./assets/level3_1.jpg"></img>
+          <img id="level3_3" src="./assets/level3_3.jpg"></img>
+      </a-assets>
+
+    <a-scene>
+      <a-assets>
+
+        <a-asset-item id="ia" src="./assets/gltf/hyperbody/01dance/ia/scene.gltf"></a-asset-item>
+        <a-asset-item id="dva" src="./assets/gltf/hyperbody/01dance/dva/scene.gltf"></a-asset-item>
+        <a-asset-item id="mr_dong" src="./assets/gltf/hyperbody/01dance/mr_dong/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="crab_ming" src="./assets/gltf/hyperbody/01dance/crab_ming/scene.gltf"></a-asset-item>
+        <a-asset-item id="wasshoi" src="./assets/gltf/hyperbody/01dance/wasshoi/scene.gltf"></a-asset-item>
+        <a-asset-item id="yukari" src="./assets/gltf/hyperbody/01dance/yukari/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="Yao" src="./assets/gltf/hyperbody/01dance/Yao/scene.gltf"></a-asset-item>
+        <a-asset-item id="Yuzhihai" src="./assets/gltf/hyperbody/01dance/Yuzhihai/scene.gltf"></a-asset-item>
+        <a-asset-item id="Zap" src="./assets/gltf/hyperbody/01dance/Zap/scene.gltf"></a-asset-item>
+        <a-asset-item id="Tidehunter" src="./assets/gltf/hyperbody/01dance/Tidehunter/scene.gltf"></a-asset-item>
+
+      <!-- Loading Bar Asset -->
+        <img id="loading" src="./assets/loading.png">
+      </a-assets>
+      <!-- Loading Bar -->
+      <a-entity position="0 1.5 -0.9" scale="0.2 0.2 0.2">
+        <a-plane id="loadingbar" width="2.34" height="0.87" src="#loading" transparent="true"></a-plane>
+        <a-animation attribute="visible" dur="5000" from="true" to="false" repeat="0"></a-animation>
+        <a-animation attribute="rotation"
+        dur="1000"
+        fill="forwards"
+        to="0 360 0"
+        repeat="indefinite"></a-animation>
+      </a-entity>
+      <!-- Loading Bar End -->
+
+    <a-entity id="positioncontainer" position="0 0 0">
+      <!-- Charactor Animation -->
+      <a-entity gltf-model="#ia" position="-1.527 0 1.909" scale="0.01 0.01 0.01" rotation="0 89.782 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#dva" position="0.795 0 1.967" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#mr_dong" position="3.077 0 -0.826" rotation="0 -33.862 0" animation-mixer=""></a-entity>
+
+      <a-entity gltf-model="#yukari" position="1.805 0 0.716" scale="0.01 0.01 0.01" rotation="0 52.196 0" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#yukari" position="-3.3 0 -3.499" rotation="0 52.196 0" scale="0.8 0.8 0.8" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#wasshoi" position="-0.414 0 -4.369" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 165.3556196747556 0"></a-entity>
+      
+
+      <a-entity gltf-model="#Yao" position="1.589 0 -2.527" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 116.48231975009635 0"></a-entity>
+      <a-entity gltf-model="#Yuzhihai" position="-3.72 0 -1.54" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 62.051 0"></a-entity>
+      <a-entity gltf-model="#Zap" position="-2.826 0 0.663" scale="0.01 0.01 0.01" animation-mixer=""></a-entity>
+      <a-entity gltf-model="#Tidehunter" position="-1.434 0 -2.22" scale="0.01 0.01 0.01" animation-mixer="" rotation="0 31.05431249609062 0"></a-entity>
+
+      <!-- setting up lights. -->
+      <a-entity position="-0.865 3.803 6.082" aframe-injected="" light="color:#ffccff;type:ambient;groundColor:#00ff40"></a-entity>
+      <a-entity position="2.189 9.447 10.228" aframe-injected="" light="color:#ff95ff;groundColor:#00ff00"></a-entity>
+      
+      <!-- Archive -->
+      <a-image src="#level3_1" width="0.1" height="0.1" position="-1.012 1.844 6.42" rotation="0 -137.62446239042376 0" material="" geometry="height:0.056" scale="4.425 10.856 10.856"></a-image>
+      <a-image src="#level3_3" width="0.1" height="0.1" position="-0.345 1.888 6.376" rotation="0 -141.46327961780025 0" material="" geometry="height:0.056" scale="4.718 11.578 11.578"></a-image>
+
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_2.gif)" position="0.366 1.839 6.129" rotation="0 -121.81082724481301 0" geometry="" scale="0.503 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_4.gif)" position="1.182 1.821 5.881" rotation="0 -118.6022635920804 0" geometry="" scale="0.503 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_5.gif)" position="0.343 4.553 -1.269" rotation="75.40124583921634 142.26542053098342 -92.87645859070645" geometry="" scale="0.321 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_6.gif)" position="-1.797 4.027 0.716" rotation="64.85882240880919 80.90164067247224 174.46564861733566" geometry="" scale="0.321 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_7.gif)" position="-0.664 3.825 -1.109" rotation="79.41195040513209 -177.84609960860757 -87.77713421404212" geometry="" scale="0.321 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_8.gif)" position="0.295 3.743 -0.004" rotation="80.72975333393299 125.19127823608488 -143.52592768027125" geometry="" scale="0.321 0.547 0.18"></a-plane>
+      <a-plane width="1.6" height="0.9" material="shader:gif;src:url(./assets/level3_9.gif)" position="1.881 3.761 -0.131" rotation="78.30168374304225 -88.8680937888223 4.872056946978972" geometry="" scale="0.321 0.547 0.18"></a-plane>
+
+
+    </a-entity>
+
+    <!-- Base Lines
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 60 0"></a-entity>
+      <a-entity line="start: 50, 0, 0; end: -50 0 0; color: magenta"
+                line__2="start: 0, 0, 50; end: 0 0 -50; color: magenta" rotation="0 120 0"></a-entity>
+    -->
+    
+    <!-- Background Color -->
+    <a-entity xr="ar: false; vr: true; magicWindow: ture">
+      <a-sky color="blue" radius="15" material="side:back;" position="0 3 0"></a-sky>
+    </a-entity>
+
+    </a-scene>
+  </body>
+</html>
