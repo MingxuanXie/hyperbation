@@ -1,8 +1,7 @@
 # Hyperbation
 Architectural Experiments using Mixed Reality Technologies by Mingxuan Xie and Pete Jiadong Qiang
 
-[Project website](http://hyperbation.space/)
-[Online Portfolio](http://index.hyperbation.space/)
+[Project website](http://hyperbation.art/)
 
 ## Hyperbation Mixed Reality Viewer
 This iOS webXR browser is a customization forked from Firefox's Project [WebXR Viewer](https://github.com/mozilla-mobile/webxr-ios) for exhibition visitors to view virtual art works streamed from local server.
