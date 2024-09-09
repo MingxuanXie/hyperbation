@@ -1,5 +1,5 @@
-# Hyperbation Archives
 _**This repo has been moved to [Hyperbation organisation repo](https://github.com/Hyperbation/hyperbation.github.io)**_  
+# Hyperbation Archives
 Architectural Experiments using Mixed Reality Technologies by Mingxuan Xie and Pete Jiadong Qiang
 
 [Visit Project Website](https://hyperbation.github.io/)
